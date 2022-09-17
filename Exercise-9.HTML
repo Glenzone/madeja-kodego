@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 9. Learning HTML Form</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+</head>
+<body>
+    <main>
+        <section>
+            <h1>
+                Learning HTML Form
+            </h1>
+            <form>
+                <table border="0" cellspacing="5" cellpadding="5">
+                    <tr>
+                        <td>
+                            <label for="fullname">Full Name</label>
+                        </td>
+                        <td>
+                            <input type="text" name="fullname" id="fullname" class="input-filed"
+                            placeholder="Input your full name">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="password">Password</label>
+                        </td>
+                        <td>
+                            <input type="password" name="pass" id="password" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="email">Email Address</label>
+                        </td>
+                        <td>
+                            <input type="email" name="email" id="email" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="status">Status</label>
+                        </td>
+                        <td>
+                            <span>
+                                <label for="status">
+                                    Single
+                                    <input type="radio" name="status" id="status-single" class="radio-button" value="Single">
+                                </label>
+                                <label for="status-M">
+                                    Married
+                                    <input type="radio" name="status" id="status-married" class="radio-button" value="Married">
+                                </label>
+                                <label for="status-W">
+                                    Widow
+                                    <input type="radio" name="status" id="status-woiow" class="radio-button" value="Widow">
+                                </label>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="birthday">Date of Birth</label>
+                        </td>
+                        <td>
+                            <input type="date" name="birthday" id="birthday" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="age">Age</label>
+                        </td>
+                        <td>
+                            <input type="text" name="age" id="age" class="input-field" pattern="\d*" maxlength="2" placeholder="18" size="5">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="benefits">Government Benefits</label>
+                        </td>
+                        <td>
+                            <input type="checkbox" name="benefits" id="benefits-sss" class="checkbox" value="SSS">SSS
+                            <br>
+                            <input type="checkbox" name="benefits" id="benefits-hdmf" class="checkbox" value="HDMF">HDMF
+                            <br>
+                            <input type="checkbox" name="benefits" id="benefits-philhealth" class="checkbox" value="PhilHealth">PhilHealth
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="schedule">Preferred Schedule</label>
+                        </td>
+                        <td>
+                            <input type="time" name="schedule" id="schedule" class="input-field">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="payout">Payout Options</label>
+                        </td>
+                        <td>
+                            <select name="payout" id="payout" class="selection-field">
+                                <option value="Monthly">Monthly</option>
+                                <option value="Quarterly">Quarterly</option>
+                                <option value="Annual">Annual</option>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="isp">Internet Provider</label>
+                        </td>
+                        <td>
+                            <input type="text" name="isp" id="isp" class="input-field" maxlength="50">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <label for="id-photo">Upload ID Photo</label>
+                        </td>
+                        <td>
+                            <input type="file" name="id-photo" id="id-photo" class="file-input">
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <span>
+                                <label for="additional">Additional Info</label>
+                                <textarea name="additional" id="additional" cols="28" rows="10"></textarea>
+                            </span>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2"></td>
+                        <td>
+                            <input type="submit" value="Submit">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </section>
+    </main>
+
+    <!--Footer-->
+    <hr>
+    <span>madeja-kodego.</span>
+    <br>
+    <span>Exercise 9. Learning HTML Form</span>
+    <br>
+    <br>
+    <nav>
+        <span>Go back to <a href="index.html">index page</a></span>
+    </nav>
+</body>
+</html>
