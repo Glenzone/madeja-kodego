@@ -1,21 +1,14 @@
-.promed-font-primary {
-    font-family: Raleway, Tahoma, Geneva, Verdana, sans-serif;
-    color: #a9c6ff;
-    font-weight: 800;
-}
-
-.promed-font-secondary {
-    font-family: Raleway, Tahoma, Geneva, Verdana, sans-serif;
-    color: #a9c6ff;
-    font-weight: 600;
-}
-
 .promed-link:link {
     color: #a9c6ff;
 }
 
 .promed-link:hover {
     color: rgb(210, 255, 155);
+
+}
+
+.promed-link:visited {
+    color: #a9c6ff;
 
 }
 
@@ -51,7 +44,18 @@ form[role="search"] {
     top: 0;
     background-position: center;
     background-size: cover;
-    opacity: 0.8;
+    opacity: 0.9;
+}
+
+.overlay-image-darker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    background-position: center;
+    background-size: cover;
+    opacity: 0.5;
 }
 
 #myCarousel {
