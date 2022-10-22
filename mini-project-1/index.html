@@ -35,45 +35,92 @@
 
         .promed-font-tertiary {
             font-family: Raleway, Tahoma, Geneva, Verdana, sans-serif;
-            color: #ffffff;
+            color: #000000;
             font-weight: 500;
         }
 
         .promed-blue {
             color: #a9c6ff;
         }
+        .container-overlay {
+            position: relative;
+            width: 100%;
+        }
+        
+        .image-overlay {
+            opacity: 1;
+            display: block;
+            width: 100%;
+            height: auto;
+            transition: .5s ease;
+            backface-visibility: hidden;
+        }
+
+        .middle {
+            transition: .5s ease;
+            opacity: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            text-align: center;
+        }
+
+        .container-overlay:hover .image-overlay {
+            opacity: 0.3;
+        }
+
+        .container-overlay:hover .middle {
+            opacity: 1;
+        }
+
+        .text {
+            background-color: #212529;
+            font-size: 16px;
+            padding: 16px 30px;
+        }
+
+        .black {
+            color:var(--bs-body-color);
+        }
     </style>
 </head>
-<body class="bg-dark">
+<body class="bg-light">
     <!-- Navbar -->
     <!-- Shows the brand with logo, slogan, and nav buttons -->
     <!-- Todo-1: add a picture in the space -->
-    <!-- Todo-2: stylize slogan -->
-    <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark" data-ride="carousel">
-        <div class="container-fluid">
-        <a class="navbar-brand justify-left" href="#" id="promed">promed</a>
-        <img src="./assets/logo.png" alt="promed" class="navbar-brand" id="promed-logo">
-        <a class="navbar-brand" href="#footer">Your Ally in Healthcare</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-        </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <form class="container">
-                    <button class="btn btn-outline-light me-2" type="button">Home</button>
-                    <button class="btn btn-outline-light me-2" type="button">Products</button>
-                    <button class="btn btn-outline-light me-2" type="button">Request a Quote</button>
-                    <button class="btn btn-outline-light me-2" type="button">About Us</button>
-                </form>
-                <form class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="OR Tables" aria-label="Search">
-                    <button class="btn btn-outline-light" type="submit">Search</button>
-                </form>
+    <nav class="navbar fixed-top navbar-expand-md navbar-dark bg-dark">
+        <div class="container">
+            <a 
+                href="./index.html" class="navbar-brand mb-0 h1" id="promed" disabled>promed
+                <img class="d-inline-block align-center" src="./assets/logo.png" alt="leaf" width="30" height="30">
+            </a>
+            <button type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item active">
+                        <a href="./index.html" class="nav-link active disabled">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./products.html" class="nav-link">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="./contact-us.html" class="nav-link">Request a Quote</a>
+                    </li>  
+                    <li class="nav-item">
+                        <a href="./about-us.html" class="nav-link">About Us</a>
+                    </li> 
+                </ul>
             </div>
         </div>
     </nav>
     <main>
         <!-- Carousel of Major Products -->
         <!-- Todo-1: Update Information per product -->
+        <!-- Todo-2: Resize the height -->
         <section>
             <div id="myCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
                 <div class="carousel-indicators">
@@ -87,7 +134,7 @@
                         <div class="container carousel-container">
                             <h1>Diamond&trade; - Operating Table</h1>
                             <p>The operating table for the most demanding requirements. Made in Germany.</p>
-                            <a href="#" class="btn btn-lg btn-light">View</a>
+                            <a href="./products.html/#diamond" class="btn btn-lg btn-light">View</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -95,7 +142,7 @@
                         <div class="container carousel-container text-dark">
                             <h1>Revolution&trade; - CT Scan</h1>
                             <p>Revolutionizing computed tomography imaging.</p>
-                            <a href="#" class="btn btn-lg btn-dark">View</a>
+                            <a href="./products.html/#revolution" class="btn btn-lg btn-dark">View</a>
                         </div>
                     </div>
                     <div class="carousel-item">
@@ -103,7 +150,7 @@
                         <div class="container carousel-container">
                             <h1>Acuson&trade; - 4D Ultrasound Machine</h1>
                             <p>High-End Ultrasound Machine for comprehensive cardiology, obstetrics, and general imaging.</p>
-                            <a href="#" class="btn btn-lg btn-light">View</a>
+                            <a href="./products.html/#acuson" class="btn btn-lg btn-light">View</a>
                         </div>
                     </div>
                 </div>
@@ -117,44 +164,93 @@
                 </a>
             </div>  
         </section>
-        <section>
-            <h1 class="promed-font-primary mt-5 mb-4 text-center">Projects</h1>
-            <article>
-                <div class="container promed-font-secondary">
-                    <h4 class="mb-3">Gift of Sight</h4>
-                    <img src="./assets/Projects/gift-of-sight.jpg" alt="Doctor examining the eyes of a child" class="img-fluid rounded mx-auto d-block">
-                    <p class="mt-3 text-justify">Promed supported several medical missions and helped eye care professionals around the country in their work to bring eye care to those in need.</p>
-                    <p class="text-justify">These sight-saving medical missions have a lasting impact on both individuals and communities at-large. Medical mission teams work side-by-side with local eye care professionals to provide hands-on training, while also helping to increase patient awareness about the need for proper eye care. Through ophthalmic medicines and devices donated by Promed, medical missions improve and restore vision to patients around the country, and help improve the sustainability of local eye care clinics so they can provide long-term care to more people.</p>
-                    <a href="#" class="btn btn-sm btn-light">Learn More</a>
-                </div>
-            </article>
-            <div class="container promed-font-secondary">
-                <h4 class="mb-3 mt-5">Hospital on Wheels</h4>
-                <img src="./assets/Projects/hospital-on-wheels.jpg" alt="A woman getting off a medical bus" class="img-fluid rounded mx-auto d-block">
-                <p class="mt-3 text-justify">Promed specializes in project management. We just launched a fleet of medical vehicles. We helped an LGU to build and equip a Medical Diagnostic Van, a Dental Clinic On Wheels, Laboratory Van, and a Hospital On Wheels.</p>
-                <p class="text-justify">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores repellat fugit inventore id alias quasi totam vitae. Culpa amet fugiat, quibusdam vitae assumenda, iste excepturi nesciunt at quod veritatis, vel porro id qui ipsa nisi! Totam hic expedita ad ex nemo ducimus eius facilis? Rerum enim nulla voluptatum suscipit delectus?</p>
-                <a href="#" class="btn btn-sm btn-light">Learn More</a>
-            </div>
-            <article>
 
-            </article>
+        <!-- List of Sample Projects -->
+        <!-- Todo-1: Add content -->
+        <!-- Todo-2: Add modal when clicked -->
+        <section class="bg-dark">
+            <div class="container">
+                <div class="row">
+                    <h1 class="text-center mt-5 mb-5 promed-font-primary">Projects</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md mb-5 text-center">
+                        <h4 class="promed-font-secondary">Gift of Sight</h4>
+                        <div class="container-overlay">
+                            <img src="./assets/Projects/gift-of-sight.jpg" alt="Doctor examining the eyes of a child" class="img-fluid rounded mx-auto d-block w-100 image-overlay">
+                            <div class="middle">
+                                <div class="text pb-2">
+                                    <h6><a href="./about-us.html" class="promed-link">Learn more</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md mb-5 text-center">
+                        <h4 class="promed-font-secondary">Hospital on Wheels</h4>
+                        <div class="container-overlay">
+                            <img src="./assets/Projects/hospital-on-wheels.jpg" alt="A woman getting off a medical bus" class="img-fluid rounded mx-auto d-block w-100 image-overlay">
+                            <div class="middle">
+                                <div class="text pb-2">
+                                    <h6><a href="./about-us.html" class="promed-link">Learn more</a></h6>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <div class="col-md mb-5 text-center">
+                        <h4 class="promed-font-secondary">Operating Room</h4>
+                        <div class="container-overlay">
+                            <img src="./assets/Projects/operating-theater.jpg" alt="Equipped operating theater" class="img-fluid rounded mx-auto d-block w-100 image-overlay">
+                            <div class="middle">
+                                <div class="text pb-2">
+                                    <h6><a href="./about-us.html" class="promed-link">Learn more</a></h6>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
+
+        <!-- Call to Action: Contact Us -->
+        <section>
+            <div class="container mt-5 mb-5">
+                <div class="row">
+                    <div class="col">
+                        <h1 class="text-center promed-font-primary black">Do you have a project in mind?</h1>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <h5 class="text-center p-5 promed-font-tertiary black">Let us know how we can help you execute your plans. Let's get to work.</h5>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col text-center">
+                        <button class="btn btn-md btn-dark"><a href="./contact-us.html" class="promed-link promed-blue">Contact Us</a></button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Footer -->
     <!-- Todo: Add company logo -->
-    <div class="container">
-        <footer class="py-3 my-4" id="footer">
+    <div class="container-fluid bg-dark">
+        <footer class="py-3 container" id="footer">
           <ul class="nav justify-content-center border-bottom pb-3 mb-3 promed-font-primary promed-blue">
-            <li class="nav-item"><a href="#" class="nav-link px-2 promed-link ">Home</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 promed-link ">Products</a></li>
-            <li class="nav-item"><a href="#" class="nav-link px-2 promed-link ">Connect</a></li>
+            <li class="nav-item"><a href="./index.html" class="nav-link px-2 promed-link disabled">Home</a></li>
+            <li class="nav-item"><a href="./products.html" class="nav-link px-2 promed-link ">Products</a></li>
+            <li class="nav-item"><a href="./contact-us.html" class="nav-link px-2 promed-link ">Connect</a></li>
           </ul>
           <p class="text-center promed-font-primary promed-blue">&copy; 2022 Promed Solutions, Inc</p>
           <p class="text-center promed-font-tertiary promed-blue">Promed Solutions, Inc. is a company devoted to bringing quality medical machines to improve lives and strengthen local healthcare capacity building. It is managed by professionals from various backgrounds of medicine and academic research.</p>
         </footer>
     </div>
-    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
     <script src="./assets/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script> -->
 </body>
 </html>
