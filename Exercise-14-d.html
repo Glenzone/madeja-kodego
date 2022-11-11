@@ -70,7 +70,7 @@
                     <pre>
 function fahrenheitToCelsius() {
   let inputF = document.getElementById('numberInputFahrenheit').value;
-  numberInputF = parseInt(inputF) - 32 / 1.8;
+  numberInputF = (parseInt(inputF) - 32) / 1.8;
   toC = Math.round(numberInputF);
   document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176C`;
 }
@@ -101,7 +101,7 @@ function celsiusToFahrenheit() {
     <script>
       function fahrenheitToCelsius() {
         let inputF = document.getElementById('numberInputFahrenheit').value;
-        numberInputF = parseInt(inputF) - 32 / 1.8;
+        numberInputF = (parseInt(inputF) - 32) / 1.8;
         toC = Math.round(numberInputF);
         document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176C`;
       }
