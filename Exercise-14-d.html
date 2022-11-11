@@ -68,7 +68,19 @@
                     <h4 class="border-bottom border-dark">Solution</h4>
                     <br>
                     <pre>
+function fahrenheitToCelsius() {
+  let inputF = document.getElementById('numberInputFahrenheit').value;
+  numberInputF = parseInt(inputF) - 32 / 1.8;
+  toC = Math.round(numberInputF);
+  document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176C`;
+}
 
+function celsiusToFahrenheit() {
+  let inputC = document.getElementById('numberInputCelsius').value;
+  numberInputC = (parseInt(inputC) * 9/5) + 32;
+  toF = Math.round(numberInputC);
+  document.getElementById("validationCelsius").innerHTML = `${toF}&#176F`;
+}
                     </pre>
                 </div>
             </div>
