@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 14. JavaScript Actvities</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+</head>
+<body>
+    <div class="container">
+        <nav class="navbar navbar-expand-lg bg-light">
+            <div class="container-fluid">
+              <a class="navbar-brand">JavaScript Activities</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Exercise-14.html">Grocery Items</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Exercise-14-b.html">To Do List</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Exercise-14-c.html">Odd or Even?</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link active">Temperature Converter</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Exercise-14-e.html">Height in Meters</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="./Exercise-14-f.html">Day Greetings</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </nav>
+        <div> &nbsp; </div>
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <h4 class="border-bottom border-dark">Output</h4>
+                    <br>
+                    <form>
+                      <div class="mb-3">
+                        <h5>Temperature Converter</h5>
+
+                        <label for="numberInputFahrenheit" class="form-label h6 mt-3">Fahrenheit to Celsius</label>
+                        <input type="text" class="form-control" id="numberInputFahrenheit" name="numberInputFahrenheit" placeholder="100">
+                        <p class="mb-3 mt-3 h6" id="validationFahrenheit"></p>
+                        <button type="button" class="btn btn-primary" onclick="fahrenheitToCelsius()">Convert</button>
+                      </div>
+                      <div class="mb-3">
+                        <label for="numberInputCelsiu" class="form-label h6 mt-3">Celsius to Fahrenheit</label>
+                        <input type="text" class="form-control" id="numberInputCelsius" name="numberInputCelsius" placeholder="37">
+                        <p class="mb-3 mt-3 h6" id="validationCelsius"></p>
+                        <button type="button" class="btn btn-primary" onclick="celsiusToFahrenheit()">Convert</button>
+                      </div>
+                    </form>
+                </div>
+                <div class="col">
+                    <h4 class="border-bottom border-dark">Solution</h4>
+                    <br>
+                    <pre>
+
+                    </pre>
+                </div>
+            </div>
+        </div>
+
+        <!--Footer-->
+        <hr>
+        <span>madeja-kodego.</span>
+        <br>
+        <span>Exercise 14. JavaScript Activities</span>
+        <br>
+        <br>
+        <nav>
+            <span>Go back to <a href="index.html">index page</a></span>
+        </nav>
+    </div>
+
+    <script>
+      function fahrenheitToCelsius() {
+        let inputF = document.getElementById('numberInputFahrenheit').value;
+        numberInputF = parseInt(inputF) - 32 / 1.8;
+        toC = Math.round(numberInputF);
+        document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176C`;
+      }
+
+      function celsiusToFahrenheit() {
+        let inputC = document.getElementById('numberInputCelsius').value;
+        numberInputC = (parseInt(inputC) * 9/5) + 32;
+        toF = Math.round(numberInputC);
+        document.getElementById("validationCelsius").innerHTML = `${toF}&#176F`;
+      }
+    </script>
+
+    <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+</body>
+</html>
