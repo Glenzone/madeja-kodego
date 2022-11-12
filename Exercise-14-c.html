@@ -69,10 +69,10 @@ function oddEven() {
     document.getElementById("validation").innerHTML = 
     `Result: ${numberInput} is an even number`;
   } else if (numberInput % 1 == 0) {
-    document.getElementById("validation").innerText = 
+    document.getElementById("validation").innerHTML = 
     `Result: ${numberInput} is an odd number`;
   } else {
-    document.getElementById("validation").innerText = 
+    document.getElementById("validation").innerHTML = 
     `Result: ${input} is not a valid input. Please enter a whole number`;
   }
 }
@@ -101,9 +101,9 @@ function oddEven() {
         if(numberInput % 2 == 0) {
           document.getElementById("validation").innerHTML = `Result: ${numberInput} is an even number`;
         } else if (numberInput % 1 == 0) {
-          document.getElementById("validation").innerText = `Result: ${numberInput} is an odd number`;
+          document.getElementById("validation").innerHTML = `Result: ${numberInput} is an odd number`;
         } else {
-          document.getElementById("validation").innerText = `Result: ${input} is not a valid input. Please enter a whole number`;
+          document.getElementById("validation").innerHTML = `Result: ${input} is not a valid input. Please enter a whole number`;
         }
       }
     </script>
