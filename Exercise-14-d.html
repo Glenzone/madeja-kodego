@@ -103,14 +103,24 @@ function celsiusToFahrenheit() {
         let inputF = document.getElementById('numberInputFahrenheit').value;
         numberInputF = (parseInt(inputF) - 32) / 1.8;
         toC = Math.round(numberInputF);
-        document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176C`;
+
+        if (isNaN(toC)) {
+          document.getElementById("validationFahrenheit").innerHTML = `${inputF} is not a valid input. Please enter a number`;
+        } else {
+          document.getElementById("validationFahrenheit").innerHTML = `${toC}&#176F`;
+        }
       }
 
       function celsiusToFahrenheit() {
         let inputC = document.getElementById('numberInputCelsius').value;
         numberInputC = (parseInt(inputC) * 9/5) + 32;
         toF = Math.round(numberInputC);
-        document.getElementById("validationCelsius").innerHTML = `${toF}&#176F`;
+
+        if (isNaN(toF)) {
+          document.getElementById("validationCelsius").innerHTML = `${inputC} is not a valid input. Please enter a number`;
+        } else {
+          document.getElementById("validationCelsius").innerHTML = `${toF}&#176F`;
+        }
       }
     </script>
 
