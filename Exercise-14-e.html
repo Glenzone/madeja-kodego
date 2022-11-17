@@ -8,6 +8,7 @@
     <link rel="icon" type="image/x-icon" href="favicon.ico">
     <!-- <link rel="stylesheet" href="./assets/css/bootstrap.min.css"> -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
 </head>
 <body>
     <div class="container">
@@ -44,20 +45,60 @@
         <div> &nbsp; </div>
         <div class="container">
             <div class="row">
-                <div class="col">
-                    <h4 class="border-bottom border-dark">Output</h4>
-                    <br>
-                    <form>
-                      <div class="mb-3">
-                        <h5>Di pa po tapos :(</h5>
-                      </div>
-                    </form>
-                </div>
+              <div class="col">
+                <h4 class="border-bottom border-dark">Output</h4>
+                <br>
+                <form>
+                  <div class="mb-3">
+                    <h5>Height Converter</h5>
+                    <p>Converts height in foot-inches unit to meters.</p>
+
+                    <div class="input-group w-100">
+                      <input type="text" onchange="convert()" class="form-control text-end" name="inputFeet" id="inputFeet" placeholder="5" value="5">
+                      <span class="input-group-text">ft</span>
+                      <input type="text" onchange="convert()" class="form-control text-end" name="inputInches" id="inputInches" placeholder="4" value="4">
+                      <span class="input-group-text">in</span>
+                      <span class="input-group-text" id="basic-addon1">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-double-right" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M3.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L9.293 8 3.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                          <path fill-rule="evenodd" d="M7.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L13.293 8 7.646 2.354a.5.5 0 0 1 0-.708z"></path>
+                        </svg>
+                      </span>
+                      <input type="text" class="form-control bg-primary text-white border-primary text-end" name="inputMeters" id="inputMeters" placeholder="1.63" disabled value="1.63">
+                      <span class="input-group-text bg-primary text-white border-primary rounded-end">m</span>
+                    </div>
+
+                    <p class="mb-3 mt-3 h6" id="validationMsg"></p>
+                  </div>
+                </form>
+            </div>
                 <div class="col">
                     <h4 class="border-bottom border-dark">Solution</h4>
                     <br>
                     <pre>
+function convert() {
+  document.getElementById('validationMsg').innerHTML = "";
+  let inputFeet = parseFloat(document.getElementById('inputFeet').value);
+  let inputInches = parseFloat(document.getElementById('inputInches').value);     
 
+  let metersFromFeet = inputFeet * 0.3048;
+  let metersFromInches = inputInches * 0.0254;
+  let inputMeters = Math.round((metersFromFeet + metersFromInches) * 100) / 100;
+  document.getElementById('inputMeters').value = inputMeters;
+
+  //validation
+  if(isNaN(inputMeters)) {
+    document.getElementById('validationMsg').innerHTML = `Uhm.. The app does not 
+    support conversion of other characters to numbers.&lt;/p&gt; &lt;p&gt; Please 
+    input a number.`;
+    document.getElementById('inputMeters').value = 0;
+  } else if (inputFeet % 1 !== 0) {
+    document.getElementById('validationMsg').innerHTML = `Oops.. Check your 
+    &lt;strong&gt;ft&lt;/strong&gt; value.&lt;/p&gt; &lt;p&gt;Shouldn't decimal 
+    values be converted to inches?`;
+    document.getElementById('inputMeters').value = 0;
+  };
+}
                     </pre>
                 </div>
             </div>
@@ -76,7 +117,27 @@
     </div>
 
     <script>
+      function convert() {
+        document.getElementById('validationMsg').innerHTML = "";
+        let inputFeet = parseFloat(document.getElementById('inputFeet').value);
+        let inputInches = parseFloat(document.getElementById('inputInches').value);
+        // console.log(`Feet ${inputFeet} | Inches ${inputInches}`);        
 
+        let metersFromFeet = inputFeet * 0.3048;
+        let metersFromInches = inputInches * 0.0254;
+        let inputMeters = Math.round((metersFromFeet + metersFromInches) * 100) / 100;
+        // console.log(`Meters: ${inputMeters}`)
+        document.getElementById('inputMeters').value = inputMeters;
+
+        //validation
+        if(isNaN(inputMeters)) {
+          document.getElementById('validationMsg').innerHTML = `Uhm.. The app does not support conversion of other characters to numbers.</p> <p> Please input a number.`;
+          document.getElementById('inputMeters').value = 0;
+        } else if (inputFeet % 1 !== 0) {
+          document.getElementById('validationMsg').innerHTML = `Oops.. Check your <strong>ft</strong> value.</p> <p>Shouldn't decimal values be converted to inches?`;
+          document.getElementById('inputMeters').value = 0;
+        };
+      }
     </script>
 
     <!-- <script src="./assets/js/bootstrap.min.js"></script> -->
