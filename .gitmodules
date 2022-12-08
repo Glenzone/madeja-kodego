@@ -1,0 +1,4 @@
+[submodule "calculator/JavaScriptPrj"]
+	path = calculator/JavaScriptPrj
+	url = https://github.com/erwinmacaraig/JavaScriptPrj.git
+	branch = madeja-glennson_develop
